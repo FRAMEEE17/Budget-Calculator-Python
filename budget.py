@@ -35,7 +35,6 @@ class Category:
         else:
             return False
 
-    #logic from Beau for most part, code original+snippet
     def __str__(self):
         output = self.name.center(30, "*") + "\n"
         for i in self.ledger:
@@ -48,7 +47,7 @@ def create_spend_chart(categories):
     spent = []
     final_spent = []
 
-    for category in categories: #logic from Beau, checking spent items
+    for category in categories:
         total = 0
         for i in category.ledger:
             if i['amount'] < 0:
@@ -63,7 +62,7 @@ def create_spend_chart(categories):
 
     axis = range(100,-10,-10)
 
-    for label in axis: #logic from Beau, right alignment similar to arithmetic arranger
+    for label in axis: 
         graph_return += str(label).rjust(3) + "| "
         for percents in final_spent:
             if percents >= label:
@@ -81,7 +80,7 @@ def create_spend_chart(categories):
         if len_longest < len(names):
             len_longest = len(names)
 
-    for i in range(len_longest): #logic from Beau, formatting
+    for i in range(len_longest): 
         for names in category_names:
             if len(names) > i:
                 graph_return += names[i] + "  "
