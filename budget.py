@@ -38,8 +38,7 @@ class Category:
     def __str__(self):
         output = self.name.center(30, "*") + "\n"
         for i in self.ledger:
-            output += f"{i['description'][:23].ljust(23)}{format(i['amount'], '.2f').rjust(7)}\n" #code from Beau, for formatting
-        output += f"Total: {format(self.get_balance(), '.2f')}"
+            output += f"{i['description'][:23].ljust(23)}{format(i['amount'], '.2f').rjust(7)}\n"
         return output
         
 def create_spend_chart(categories):
